@@ -1,0 +1,456 @@
+
+:root {
+    --primary-green: #4f4f4a;
+    --primary-blue: #31322e;
+    --light-green: #e6f9f2;
+    --light-blue: #e3f3fa;
+    --text-dark: #23272f;
+    --text-light: #4f422d;
+    --background-light: #f6f8fa;
+    --background-footer: #f1f3f6;
+    --white: #fff;
+    --border-color: #e2e8f0;
+
+    /* Gradients */
+    --gradient-green-blue: linear-gradient(90deg, var(--primary-green) 0%, var(--primary-blue) 100%);
+    --gradient-blue-green: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+    --gradient-light-green-blue: linear-gradient(120deg, var(--light-green) 0%, var(--light-blue) 100%);
+    --gradient-button: linear-gradient(90deg, #6b7e16 0%, #6e8e79 100%);
+    --gradient-button-hover: linear-gradient(90deg, #576c05 0%, #4d611c 100%);
+
+    /* Shadows */
+    --shadow-nav: 0 2px 12px rgba(44, 62, 80, 0.06);
+    --shadow-card: 0 2px 15px rgba(44, 62, 80, 0.08);
+    --shadow-card-hover: 0 8px 20px rgba(62,198,224,0.16);
+    --shadow-blue-extralight: 0 2px 8px rgba(62,198,224,0.07);
+    --shadow-blue-light: 0 2px 8px rgba(62,198,224,0.08);
+    --shadow-blue-medium: 0 2px 8px rgba(62,198,224,0.10);
+    --shadow-blue-large: 0 8px 32px rgba(62, 198, 224, 0.10);
+    --shadow-blue-header: 0 6px 32px rgba(62,198,224,0.13);
+    --shadow-blue-dark: 0 4px 16px rgba(62,198,224,0.15);
+    --shadow-hero: 0 2px 16px rgba(62,198,224,0.08);
+    --shadow-input: 0 1px 4px rgba(62,198,224,0.07);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Inter', 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--background-light);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background: var(--white);
+    box-shadow: var(--shadow-nav);
+    padding: 0.5em 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2em;
+    height: 40px;
+}
+
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--primary-green);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.6em 1.4em;
+    border-radius: 999px;
+    letter-spacing: 0.5px;
+    font-size: 1.05em;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 0 rgba(44, 62, 80, 0);
+}
+
+nav ul li a.active, nav ul li a:hover {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+main {
+    max-width: 1500px;
+    width: 95%;
+    margin: 3em auto 2em auto;
+    background: var(--white);
+    padding: 3.5em 2.5em;
+    border-radius: 20px;
+    box-shadow: var(--shadow-blue-large);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 3em;
+    background: var(--gradient-light-green-blue);
+    border-radius: 18px;
+    padding: 4em 1em 4em 1em;
+    color: var(--text-dark);
+    box-shadow: 0 2px 16px rgba(62,198,224,0.08);
+    position: relative;
+    overflow: hidden;
+    background-image: url("homepng.jpeg");
+    background-size: cover;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.3em;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: 'Poppins', Arial, sans-serif;
+    text-shadow: var(--shadow-blue-extralight);
+}
+
+.hero p {
+    font-size: 1.3em;
+    color: white;
+    margin-bottom: 1.2em;
+    font-weight: 500;
+}
+
+.button {
+    display: inline-block;
+    background: var(--gradient-button);
+    color: var(--white);
+    padding: 0.9em 2.2em;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-top: 1em;
+    box-shadow: var(--shadow-blue-light);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.button:hover, .button:focus {
+    background: var(--gradient-button-hover);
+    box-shadow: var(--shadow-blue-dark);
+    transform: translateY(-2px) scale(1.03);
+}
+
+.card {
+    background: var(--white);
+    border-radius: 9px;
+    border-width: 1.7px;
+    box-shadow: var(--shadow-card);
+    padding: 2.2em 1.5em;
+    margin-bottom: 2em;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2em;
+    transition: box-shadow 0.1s, transform 0.1s;
+}
+    
+
+.card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px) scale(1.01);
+}
+
+form label {
+    display: block;
+    margin-top: 1.3em;
+    font-weight: 500;
+    color: var(--primary-green);
+    font-size: 1.05em;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 0.8em;
+    margin-top: 0.4em;
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background: var(--white);
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+form input:focus, form select:focus {
+    border: 1.5px solid var(--primary-blue);
+    outline: none;
+    box-shadow: var(--shadow-blue-medium);
+}
+
+form button {
+    margin-top: 2em;
+    width: 100%;
+    background: var(--gradient-green-blue);
+    color: var(--white);
+    border: none;
+    padding: 1em;
+    border-radius: 999px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    box-shadow: var(--shadow-blue-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+form button:hover, form button:focus {
+    background: var(--gradient-blue-green);
+    box-shadow: var(--shadow-blue-dark);
+    transform: translateY(-2px) scale(1.02);
+}
+
+.result {
+    background: var(--gradient-light-green-blue);
+    color: var(--text-dark);
+    padding: 1.5em;
+    border-radius: 14px;
+    margin-top: 2em;
+    text-align: center;
+    font-size: 1.25em;
+    font-weight: 600;
+    box-shadow: var(--shadow-blue-light);
+}
+
+.icon {
+    font-size: 1.3em;
+    color: var(--primary-green);
+}
+
+footer {
+    background: var(--background-footer);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1.2em 0 1em 0;
+    font-size: 1em;
+    margin-top: auto;
+    letter-spacing: 0.5px;
+    border-top: 1px solid var(--border-color);
+}
+
+footer a {
+    color: var(--primary-blue);
+    text-decoration: underline;
+    margin: 0 0.5em;
+    font-weight: 500;
+}
+
+.chatbot-container {
+    max-width: 800px;
+    height: 540px;
+    margin: 2.5em auto;
+    background: var(--white);
+    border-radius: 18px;
+    box-shadow: var(--shadow-blue-header);
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbot-header {
+    background: #7b9567;
+    color: var(--white);
+    padding: 1.2em 1em;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 1.15em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.chatbot-messages {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 1.2em 1em;
+    font-size: 1em;
+    background: var(--background-light);
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+}
+
+.chatbot-form {
+    display: flex;
+    border-top: 1px solid var(--border-color);
+    background: var(--background-light);
+    padding: 0.7em 0.7em 0.7em 1em;
+    gap: 0.5em;
+}
+
+.chatbot-form input {
+    flex: 1;
+    border: none;
+    padding: 1em;
+    font-size: 1em;
+    border-radius: 999px;
+    background: var(--white);
+    box-shadow: 0 1px 4px rgba(62,198,224,0.07);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.chatbot-form input:focus {
+    outline: none;
+    background: var(--light-blue);
+    box-shadow: var(--shadow-blue-header);
+}
+
+
+.chatbot-form button {
+    border-radius: 699px;
+    margin: 0;
+    padding: 0 1.5em;
+    font-size: 1em;
+    font-weight: 600;
+    background: #7b9567;
+    color: black;
+    border: none;
+    box-shadow: var(--shadow-blue-medium);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.chatbot-form button:hover, .chatbot-form button:focus {
+    background: #556b2f;
+    box-shadow: var(--shadow-blue-dark);
+}
+
+
+.user-msg, .bot-msg {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5em;
+}
+
+
+.user-msg {
+    justify-content: flex-end;
+}
+
+.bot-msg {
+    justify-content: flex-start;
+}
+
+.user-msg b, .bot-msg b {
+    display: none;
+}
+
+.user-msg {
+    color: var(--white);
+    background: var(--gradient-blue-green);
+    border-radius: 18px 18px 4px 18px;
+    padding: 0.7em 1.1em;
+    max-width: 80%;
+    align-self: flex-end;
+    box-shadow: var(--shadow-blue-medium);
+    font-weight: 500;
+}
+
+.bot-msg {
+    color: var(--text-dark);
+    background: var(--light-green);
+    border-radius: 18px 18px 18px 4px;
+    padding: 0.7em 1.1em;
+    max-width: 80%;
+    align-self: flex-start;
+    box-shadow: var(--shadow-blue-extralight);
+    font-weight: 500;
+}
+
+@media (max-width: 600px) {
+    .chatbot-container {
+        max-width: 98vw;
+        border-radius: 10px;
+    }
+    .chatbot-messages {
+        padding: 0.7em 0.3em;
+    }
+    .chatbot-form {
+        padding: 0.5em 0.2em 0.5em 0.5em;
+    }
+}
+
+@media (max-width: 1100px) {
+    main {
+        padding: 1.2em 0.5em;
+    }
+    .hero {
+        padding: 2em 0.5em 2em 0.5em;
+        font-size: 0.95em;
+    }
+    nav .nav-container {
+        padding: 0 0.5em;
+    }
+    nav ul {
+        gap: 0.7em;
+    }
+    .card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.2em 0.7em;
+    }
+}
+
+/* Whom We Serve Section */
+.serve-section {
+    text-align: center;
+    padding: 4em 1em;
+    background: var(--background-light);
+}
+
+.serve-section h2 {
+    font-size: 3em;
+    color: var(--primary-green);
+    margin-bottom: 0.5em;
+}
+
+.serve-section .subtitle {
+    font-size: 1.2em;
+    color: #2f6a4f;
+    max-width: 800px;
+    margin: 0 auto 3em auto;
+}
